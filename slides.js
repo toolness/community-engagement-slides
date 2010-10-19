@@ -95,17 +95,22 @@ onload = function() {
   else
     window.setInterval(setCurrSlideFromHash, 250);
 
+  const LEFT_ARROW = 37;
+  const RIGHT_ARROW = 39;
+  const SPACE = 32;
+
   window.onkeydown = function(event) {
     // Don't let Firefox scroll the window *and*
     // advance the slides at the same time.
-    event.preventDefault();
+    switch (event.keyCode) {
+    case RIGHT_ARROW:
+    case LEFT_ARROW:
+      event.preventDefault();
+      break;
+    }
   };
 
   window.onkeyup = function(event) {
-    const LEFT_ARROW = 37;
-    const RIGHT_ARROW = 39;
-    const SPACE = 32;
-
     switch (event.keyCode) {
     case SPACE:
     case RIGHT_ARROW:
