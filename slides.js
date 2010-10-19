@@ -93,6 +93,12 @@ onload = function() {
   else
     window.setInterval(setCurrSlideFromHash, 250);
 
+  window.onkeydown = function(event) {
+    // Don't let Firefox scroll the window *and*
+    // advance the slides at the same time.
+    event.preventDefault();
+  };
+
   window.onkeyup = function(event) {
     const LEFT_ARROW = 37;
     const RIGHT_ARROW = 39;
