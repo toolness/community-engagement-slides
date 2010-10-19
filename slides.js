@@ -41,8 +41,10 @@ onload = function() {
     var date = $(".title.slide .date");
 
     each(".normal.slide", function() {
-      this.appendChild(date.cloneNode(true));
-      this.appendChild(footer.cloneNode(true));
+      if (date)
+        this.appendChild(date.cloneNode(true));
+      if (footer)
+        this.appendChild(footer.cloneNode(true));
     });
 
     each(".slide", function(i) {
